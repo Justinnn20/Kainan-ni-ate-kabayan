@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Kainan ni Ate Kabayan</title>
+    <link rel="stylesheet" href="Checkout.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-circle">
+                <img src="images/logo ate kabayan.jpg" alt="Logo">
+            </div>
+            <h2>KAINAN NI ATE KABAYAN</h2>
+        </div>
+        
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="cart.html" class="cart-icon-btn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="badge" id="checkout-cart-badge">0</span>
+            </a>
+            <button class="btn-order-now">Order Now!</button>
+        </div>
+    </div>
+</header>
+<main class="checkout-container">
+        
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+            <p>KAINAN NI ATE KABAYAN - Bangkal, Makati City</p>
+        </div>
+
+        <div class="progress-track">
+            <div class="step completed">
+                <div class="circle">1</div>
+                <span>Menu</span>
+            </div>
+            <div class="line active"></div>
+            <div class="step completed">
+                <div class="circle">2</div>
+                <span>Cart</span>
+            </div>
+            <div class="line active"></div>
+            <div class="step active">
+                <div class="circle">3</div>
+                <span>Checkout</span>
+            </div>
+        </div>
+
+        <div class="section-title">Delivery Options</div>
+        <div class="option-buttons">
+            <button class="opt-btn active"><i class="fa-solid fa-motorcycle"></i> Delivery</button>
+            <button class="opt-btn"><i class="fa-solid fa-location-dot"></i> Pick Up</button>
+        </div>
+
+        <div class="section-title">Details</div>
+        <div class="form-container">
+            <p class="required-note">* Indicates required field</p>
+            <form id="checkout-form">
+                
+                <div id="personal-info-section">
+                    <div class="row">
+                        <input type="text" id="fname" placeholder="First Name*" required>
+                        <input type="text" id="lname" placeholder="Last Name*" required>
+                    </div>
+                    <div class="row">
+                        <input type="email" placeholder="Email">
+                        <input type="text" id="phone" placeholder="Phone Number*" required>
+                    </div>
+                </div>
+
+                <div id="address-info-section">
+                    <div class="row full-width">
+                        <input type="text" placeholder="Address Line 1*" required>
+                    </div>
+                    <div class="row">
+                        <input type="text" placeholder="Barangay*" required>
+                        <input type="text" placeholder="City*" required>
+                    </div>
+                    <div class="row">
+                        <input type="text" placeholder="Province*" required>
+                        <input type="text" placeholder="Postal Code*" required>
+                    </div>
+                    <div class="row full-width">
+                        <textarea placeholder="Delivery Instructions (Note to rider - e.g. landmark)"></textarea>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="section-title">Payment Method</div>
+        <div class="payment-options">
+            <button class="pay-btn active"><i class="fa-solid fa-money-bill-wave"></i> Cash</button>
+            <button class="pay-btn"><i class="fa-solid fa-credit-card"></i> Card</button>
+            <button class="pay-btn"><i class="fa-solid fa-wallet"></i> E-Wallet</button>
+        </div>
+
+        <div class="section-title">Order Summary</div>
+        <div class="summary-box">
+            
+            <div id="order-items-container"></div>
+
+            <hr>
+
+            <div class="totals-row">
+                <span>Subtotal</span>
+                <div class="prices">
+                    <span id="checkout-subtotal" class="t-main"></span>
+                </div>
+            </div>
+            <div class="totals-row">
+                <span>Standard Delivery</span>
+                <span id="checkout-shipping" class="t-main"></span>
+            </div>
+
+            <div class="voucher-section">
+                <button class="voucher-btn"><i class="fa-solid fa-ticket"></i> Apply a voucher</button>
+            </div>
+
+            <p class="terms">By completing this order, I agree to all <b>terms & conditions.</b></p>
+
+            <div class="grand-total-row">
+                <div class="label-grp">
+                    <span>Total <small>(incl. fees and tax)</small></span>
+                </div>
+                <div class="price-grp">
+                    <span id="checkout-total" class="total-amount"></span>
+                </div>
+            </div>
+
+            <button class="btn-place-order" id="placeOrderBtn">Place Order</button>
+        </div>
+
+    </main>
+
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-section contact-info">
+            <img src="images/logo ate kabayan.jpg" alt="Kainan ni Ate Kabayan Logo" class="footer-logo">
+            <div class="details">
+                <p><i class="fas fa-clock"></i> OPEN DAILY (10AM - 3AM)</p>
+                <p><i class="fas fa-phone-alt"></i> (0921) 910 6057</p>
+                <p><i class="fas fa-map-marker-alt"></i> 1785 Evangelista St., Bangkal, Makati City</p>
+            </div>
+        </div>
+
+        <div class="footer-section sitemap">
+            <h3>SITEMAP</h3>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="homepage.html#reservation-section">Reserve a Table</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>SOCIAL MEDIA</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/kainanniatekabayan"><i class="fab fa-facebook-f"></i> Kainan ni Ate Kabayan</a></li>
+                <li><a href="https://www.instagram.com/kainanniatekabayan/"><i class="fab fa-instagram"></i> @Kainan ni Ate Kabayan</a></li>
+                <li><a href="https://share.google/I9ubNtooj7WKodVWl"><i class="fab fa-google"></i> Kainan ni Ate Kabayan</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2022 Kainan ni Ate Kabayan. All Right Reserved.</p>
+    </div>
+</footer> 
+<script src="script.js"></script>
+
+</body>
+</html>

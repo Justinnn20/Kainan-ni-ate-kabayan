@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #FFB347;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.logo-img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon {
+    position: relative;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.btn-status-header {
+    background-color: #e67e00;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.tracking-main {
+    display: flex;
+    flex: 1; 
+    position: relative;
+    overflow: hidden;
+}
+
+.map-container {
+    flex: 1.5; 
+    position: relative;
+    background-color: #ddd;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.tracking-panel {
+    flex: 1; 
+    background-color: #fffaf0;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    overflow-y: auto;
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.status-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.arrival-time {
+    color: #e67e00;
+    font-weight: bold;
+}
+
+.status-badge {
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 20px 0;
+}
+
+.rider-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.rider-img-box img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.rider-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.rider-details p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.rider-rating {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+.rider-rating i { color: #f1c40f; }
+
+.btn-circle.call {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: auto;
+}
+
+.message-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chat-box {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    height: 120px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+}
+
+.msg.rider-msg {
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+}
+
+.btn-send {
+    background-color: #FFB347;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.action-area {
+    margin-top: auto;
+}
+
+.btn-order-received {
+    width: 100%;
+    background-color: #FFC107;
+    color: #333;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.btn-order-received:hover {
+    background-color: #ffca28;
+}
+
+.note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}

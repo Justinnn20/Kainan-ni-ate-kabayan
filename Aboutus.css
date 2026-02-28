@@ -1,0 +1,351 @@
+/* =========================================
+   A. GLOBAL SETUP & VARIABLES
+   ========================================= */
+:root {
+    --primary-orange: #FFBD59; 
+    --highlight-orange: #F4A42B; 
+    --accent-red: #ff4757; 
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --bg-color: #FFFBE6;
+}   
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+    font-family: 'Fredoka One', cursive;
+}
+
+.font-handwriting {
+    font-family: 'Patrick Hand', cursive;
+}
+
+/* =========================================
+   B. HEADER & NAVIGATION (UPDATED TO MATCH IMAGE)
+   ========================================= */
+header {
+    background-color: var(--primary-orange);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.logo h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 5px;
+    transition: opacity 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    opacity: 1;
+    border-bottom: 3px solid var(--white); 
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon-btn {
+    position: relative;
+    background: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-orange);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-icon-btn:hover {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4757;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.btn-order-now {
+    background: #ff4757; 
+    color: var(--white); 
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 0 #d63031; 
+    transition: transform 0.1s;
+}
+
+.btn-order-now:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d63031;
+}
+
+/* =========================================
+   C. HERO SECTION (WHY DINE WITH US)
+   ========================================= */
+.hero {
+    background-color: #E6D5B8;
+    background-image: linear-gradient(to bottom right, #E6D5B8, #F3E5D0);
+    padding: 3rem 2rem 5rem; 
+    max-width: 100%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+}
+
+.hero::before {
+    content: 'KAINAN';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    font-family: 'Fredoka One', cursive;
+    font-size: 15vw;
+    color: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-text {
+    flex: 1;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.font-display {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: var(--text-dark); 
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.highlight-orange {
+    color: var(--primary-orange); 
+    display: inline-block;
+    text-shadow: 2px 2px 0px #fff; 
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.story-box {
+    background: var(--white); 
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.story-title {
+    color: var(--highlight-orange);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.story-box p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.hero-images {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    max-width: 500px;
+    z-index: 1;
+}
+
+.floating-food {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid white;
+    overflow: hidden;
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.floating-food img { width: 100%; height: 100%; object-fit: cover; }
+
+.polaroid-1 {
+    position: absolute;
+    width: 240px;
+    padding: 10px 10px 40px 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    top: 150px;
+    left: 20px;
+    transform: rotate(-8deg);
+    z-index: 2;
+}
+.polaroid-1 img { width: 100%; display: block; }
+
+.polaroid-2 {
+    position: absolute;
+    width: 240px;
+    padding: 10px 10px 40px 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    bottom: 0;
+    right: 20px;
+    transform: rotate(5deg);
+    z-index: 3;
+}
+.polaroid-2 img { width: 100%; display: block; }
+
+
+/* =========================================
+   D. REVIEWS SECTION
+   ========================================= */
+.reviews-section { background-color: #F39C12; padding: 5rem 2rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 3rem; color: #000; margin-bottom: 2rem; font-weight: bold; }
+
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+
+.review-card {
+    background-color: #FAD7A0; padding: 2rem; border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center;
+}
+
+.review-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.review-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; background-color: #fff; }
+.header-info { display: flex; flex-direction: row; align-items: center; gap: 15px; flex-wrap: wrap; }
+.reviewer-name { font-size: 1.2rem; font-weight: 800; color: #000; margin: 0; font-family: 'Poppins', sans-serif; }
+.stars { color: #FFD700; font-size: 1.2rem; display: flex; gap: 2px; }
+.review-text { color: #333; font-size: 1.1rem; line-height: 1.5; font-weight: 500; padding-left: 10px; }
+
+/* =========================================
+   E. FOOTER
+   ========================================= */
+#contact { background-color: var(--primary-orange); color: var(--white); padding: 3rem 0 0; font-family: sans-serif; font-size: 0.9rem; }
+.footer-content { display: flex; flex-wrap: nowrap; justify-content: space-around; max-width: 1200px; margin: 0 auto; padding: 0 40px 1rem; }
+.footer-section { padding: 0 1rem; min-width: 180px; margin-bottom: 1rem; }
+.footer-logo { width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px; display: block; }
+.contact-info { flex-basis: 30%; align-items: flex-start; }
+.details { margin-top: 15px; }
+.details p { font-size: 0.95rem; line-height: 1.6; margin: 0 0 5px; }
+.details i { font-size: 1rem; margin-right: 8px; }
+.footer-section h3 { font-size: 1.1rem; margin-bottom: 15px; font-family: 'Fredoka One', cursive; }
+.footer-section ul li { margin-bottom: 5px; }
+.footer-section ul li a { color: var(--white); text-decoration: none; font-size: 0.95rem; }
+.footer-bottom { text-align: center; padding: 15px 0; font-size: 0.8rem; color: #F0F0F0; border-top: 1px solid rgba(255, 255, 255, 0.2); margin-top: 1rem; }
+
+/* =========================================
+   F. RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 4rem; gap: 3rem; }
+    .hero-text { max-width: 100%; }
+    .hero-images { width: 100%; height: 500px; }
+    .floating-food { right: 50%; transform: translateX(50%); top: -20px; }
+    .polaroid-1 { left: 10%; top: 180px; transform: rotate(-5deg); }
+    .polaroid-2 { right: 10%; bottom: 20px; transform: rotate(5deg); }
+}
+
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero-text h1 { font-size: 3rem; }
+    .hero-images { height: 400px; }
+    .floating-food { width: 180px; height: 180px; }
+    .polaroid-1 { width: 180px; top: 130px; left: 0; }
+    .polaroid-2 { width: 180px; bottom: 0; right: 0; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; align-items: center; text-align: center; }
+    .contact-info { align-items: center; }
+}

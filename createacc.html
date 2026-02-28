@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="createacc.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Pane: Hero Section -->
+        <div class="left-pane">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <p class="hero-subtitle">COME IN</p>
+                    <h1 class="hero-title">WE ARE OPEN</h1>
+                </div>
+                <div class="hero-footer">
+                    <p class="hours">Mon - Fri: 9AM - 6PM</p>
+                    <p class="address">1785 Evangelista St, Bangkal Makati City</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Pane: Form Section -->
+        <div class="right-pane">
+            <div class="form-container">
+                <h2 class="form-title">Create an Account</h2>
+                
+                <form class="signup-form">
+                    <!-- Name Fields Row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-input" required>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group password-group">
+                        <input type="password" placeholder="Password" class="form-input password-input" required>
+                        <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <!-- Create Account Button -->
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>Or register with</span>
+                </div>
+
+                <!-- Social Login Buttons -->
+                <div class="social-buttons">
+                    <button class="btn-social btn-google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Password Toggle -->
+    <script src="script.js"></script>
+</body>
+</html>

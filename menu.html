@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kainan ni Ate Kabayan - Menu</title>
+    
+    <link rel="stylesheet" href="menu-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Patrick+Hand&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+ <header>
+      <div class="header-container">
+          <div class="logo">
+              <img src="images/logo ate kabayan.jpg" alt="Logo" class="logo-img">
+              <h2>KAINAN NI ATE KABAYAN</h2>
+          </div>
+          
+          <nav>
+              <a href="index.html">Home</a>
+              <a href="menu.html" class="active">Menu</a>
+              <a href="About Us.html">About Us</a>
+              <a href="Contactus.html">Contact Us</a>
+          </nav>
+
+          <div class="header-actions">
+              <a href="cart.html" class="cart-icon-btn">
+                  <i class="fa-solid fa-shopping-cart"></i>
+                  <span class="badge" id="cart-badge">0</span>
+              </a>
+              <button class="btn-order-now">Order Now!</button>
+          </div>
+      </div>
+    </header>
+
+    <main>
+        <section class="top-bar">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search Menu">
+            </div>
+            <div class="rating-badge">
+                <div class="stars">
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <span>5.0 (100+ Ratings)</span>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <div class="category-wrapper" id="categoryContainer">
+                </div>
+        </section>
+
+        <div class="menu-grid" id="menuGrid">
+
+            <div class="menu-card" data-category="silog">
+                    <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\PorkSilog.png" alt="Porksilog"></div>
+                    <div class="card-details">
+                        <div class="card-header"><h3>PORKSILOG</h3><span class="price">₱130</span></div>
+                        <p class="desc">Crispy porkchop with sinangag rice and fried egg.</p>
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <div class="card-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Porksilog', 130, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\PorkSilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="menu-card" data-category="goto">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Goto Overload.png" alt="Goto Overload"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>GOTO OVERLOAD</h3><span class="price">₱150</span></div>
+                    <p class="desc">Sabaw na may overload twalya, balat, isaw, at karne with rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Goto Overload', 150, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Goto Overload.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="lugaw">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Lugaw overload.png" alt="Lugaw Overload"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LUGAW OVERLOAD</h3><span class="price">₱150</span></div>
+                    <p class="desc">UNLI lugaw na may itlog, lechon kawali, twalya, at isaw.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Lugaw Overload', 150, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Lugaw overload.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\LiempoSilog.png" alt="Liemposilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LIEMPOSILOG</h3><span class="price">₱155</span></div>
+                    <p class="desc">Grilled Liempo with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Liemposilog', 155, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\LiempoSilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="sizzling">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Sisig Barkada.png" alt="Sisig Barkada"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SISIG BARKADA</h3><span class="price">₱185</span></div>
+                    <p class="desc">Sizzling pork sisig with egg for sharing barkada.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Sisig Barkada', 185, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Sisig Barkada.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chow">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Siomai Chowfan.png" alt="Siomai Chowfan"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SIOMAI CHOWFAN</h3><span class="price">₱95</span></div>
+                    <p class="desc">Crispy fried siomai with special chowfan rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Siomai Chowfan', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Siomai Chowfan.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chow">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Bacon Chowfan.png" alt="Bacon Chowfan"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>BACON CHOWFAN</h3><span class="price">₱95</span></div>
+                    <p class="desc">Bacon & Cheese Dip with special chowfan rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Bacon Chowfan', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Bacon Chowfan.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Bangsilog.png" alt="Bangsilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>BANGSILOG</h3><span class="price">₱130</span></div>
+                    <p class="desc">Fried Milkfish with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Bangsilog', 130, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Bangsilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="sizzling">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Sizzling Sisig.png" alt="Sizzling Sisig"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SIZZLING SISIG</h3><span class="price">₱155</span></div>
+                    <p class="desc">Sizzling pork sisig with egg (Solo).</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Sizzling Sisig', 155, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Sizzling Sisig.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="goto">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Goto Regular.png" alt="Goto Regular"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>GOTO REGULAR</h3><span class="price">₱85</span></div>
+                    <p class="desc">Goto soup with beef & rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Goto Regular', 85, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Goto Regular.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chow">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Shanghai Chowfan.png" alt="Shanghai Chowfan"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SHANGHAI CHOWFAN</h3><span class="price">₱95</span></div>
+                    <p class="desc">Fried Shanghai with special chowfan rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Shanghai Chowfan', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Shanghai Chowfan.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Longsilog.png" alt="Longsilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LONGSILOG</h3><span class="price">₱130</span></div>
+                    <p class="desc">Longganisa with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Longsilog', 130, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Longsilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="liemposilog2.jpg" alt="Liemposilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LIEMPOSILOG</h3><span class="price">₱155</span></div>
+                    <p class="desc">Crispy Liempo with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Liemposilog', 155, 'liemposilog2.jpg')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="lugaw">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Lugaw Isaw.png" alt="Lugaw Isaw"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LUGAW ISAW</h3><span class="price">₱95</span></div>
+                    <p class="desc">Lugaw with Isaw toppings.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Lugaw Isaw', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Lugaw Isaw.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chow">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Chicken Nuggets Chowfan.png" alt="Nuggets Chowfan"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>NUGGETS CHOWFAN</h3><span class="price">₱95</span></div>
+                    <p class="desc">Chicken Nuggets with special chowfan rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Nuggets Chowfan', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Chicken Nuggets Chowfan.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Tocilog.png" alt="Tocilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>TOCILOG</h3><span class="price">₱130</span></div>
+                    <p class="desc">Tocino with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Tocilog', 130, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Tocilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="silog">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Tapsilog.png" alt="Tapsilog"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>TAPSILOG</h3><span class="price">₱130</span></div>
+                    <p class="desc">Tapa with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Tapsilog', 130, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Tapsilog.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="lugaw">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Lugaw Lechon.png" alt="Lugaw Lechon"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LUGAW LECHON</h3><span class="price">₱95</span></div>
+                    <p class="desc">Lugaw with Crispy Lechon Kawali.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Lugaw Lechon', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Lugaw Lechon.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="sizzling">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Sizzling Hungarian.png" alt="Sizzling Hungarian"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SIZZLING HUNGARIAN</h3><span class="price">₱140</span></div>
+                    <p class="desc">Hungarian sausage with java rice and gravy.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Sizzling Hungarian', 140, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Sizzling Hungarian.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chow">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Sausage Chowfan.png" alt="Sausage Chowfan"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SAUSAGE CHOWFAN</h3><span class="price">₱95</span></div>
+                    <p class="desc">Mini crispy sausages with special chowfan rice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Sausage Chowfan', 95, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Sausage Chowfan.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="sizzling">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Sizzling Liempo.png" alt="Sizzling Liempo"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SIZZLING LIEMPO</h3><span class="price">₱180</span></div>
+                    <p class="desc">Sizzling liempo with java rice and chili gravy.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Sizzling Liempo', 180, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Sizzling Liempo.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="carte">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Tokwat Lechon.png" alt="Tokwat Lechon"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>TOKWA'T LECHON</h3><span class="price">₱120</span></div>
+                    <p class="desc">Lechon kawali with tokwa and vinegar sauce.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Tokwat Lechon', 120, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Tokwat Lechon.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="carte">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Shanghai.png" alt="Shanghai"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>SHANGHAI</h3><span class="price">₱135</span></div>
+                    <p class="desc">Lumpiang Shanghai with sinangag rice and fried egg.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Shanghai', 135, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Shanghai.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="carte">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Buttered Chicken.png" alt="Buttered Chicken"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>BUTTERED CHICKEN</h3><span class="price">₱220</span></div>
+                    <p class="desc">Fried Chicken coated in butter sauce.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Buttered Chicken', 220, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Buttered Chicken.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="drinks">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Bottled Water.png" alt="Bottled Water"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>BOTTLED WATER</h3><span class="price">₱20</span></div>
+                    <p class="desc">Clean and mineral distilled water.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Bottled Water', 20, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Bottled Water.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="drinks">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Lemon Cucumber Juice.png" alt="Lemon Cucumber"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LEMON CUCUMBER</h3><span class="price">₱25</span></div>
+                    <p class="desc">Freshly squeezed Lemon and Cucumber Juice.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Lemon Cucumber', 25, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Lemon Cucumber Juice.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="drinks">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Coke Misskona.png" alt="Coke Mismo"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>COCA-COLA</h3><span class="price">₱30</span></div>
+                    <p class="desc">Original Coca-cola Mismo.</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Coke Mismo', 30, 'C:\\Users\\Clive\\FINALS PROJECT WEBDEV\\images\\Coke Misskona.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Toge.png" alt="Lumpiang Toge"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>LUMPIANG TOGE</h3><span class="price">₱20</span></div>
+                    <p class="desc">Crispy Lumpiang Toge</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Lumpiang Toge', 20, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Toge.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Tokwa.png" alt="Tokwa"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>TOKWA</h3><span class="price">₱20</span></div>
+                    <p class="desc">Crispy Tofu best partner of Lugaw</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Tokwa', 20, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Tokwa.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Fried Egg.png" alt="Fried Egg"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>FRIED EGG</h3><span class="price">₱15</span></div>
+                    <p class="desc">Fried Egg</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Fried Egg', 15, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Fried Egg.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Plain Rice.png" alt="Plain Rice"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>PLAIN RICE</h3><span class="price">₱15</span></div>
+                    <p class="desc">Perfectly Cooked Plain Rice</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Plain Rice', 15, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Plain Rice.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Fried Rice.png" alt="Fried Rice"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>FRIED RICE</h3><span class="price">₱20</span></div>
+                    <p class="desc">Delicious Sinangag Rice</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Fried Rice', 20, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Fried Rice.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Chowfan Rice.png" alt="Chowfan Rice"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>CHOWFAN RICE</h3><span class="price">₱50</span></div>
+                    <p class="desc">Best Chowfan Rice in the World</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('Chowfan Rice', 50, 'C:\Users\Clive\FINALS PROJECT WEBDEV\images\Chowfan Rice.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="addons">
+                <div class="card-img-container"><img src="C:\Users\Clive\FINALS PROJECT WEBDEV\images\Boiled Egg.png" alt="Boiled Egg"></div>
+                <div class="card-details">
+                    <div class="card-header"><h3>BOILED EGG</h3><span class="price">₱15</span></div>
+                    <p class="desc">Perfectly Cooked Boiled Egg</p>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <div class="card-actions">
+                        <button class="btn-add-cart" onclick="addToCart('C:\Users\Clive\FINALS PROJECT WEBDEV\images\Boiled Egg.png')">Add to Cart! <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            </div> 
+    </main>
+
+    <div id="toast">Item added to cart!</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

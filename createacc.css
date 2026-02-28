@@ -1,0 +1,392 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Left Pane: Hero Section (40%) */
+.left-pane {
+    width: 40%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&h=1000&fit=crop') center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 60px 40px;
+    position: relative;
+}
+
+.hero-overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.hero-subtitle {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    color: #f5a661;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.hero-footer {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.hours {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.address {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Right Pane: Form Section (60%) */
+.right-pane {
+    width: 60%;
+    background-color: #f5a661;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-title {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Form Styling */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #999999;
+}
+
+.form-input:focus {
+    border-color: #f5a661;
+    box-shadow: 0 0 0 3px rgba(245, 166, 97, 0.1);
+}
+
+.form-input:hover {
+    border-color: #e89a4f;
+}
+
+/* Password Field with Eye Icon */
+.password-group {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999999;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle:hover {
+    color: #f5a661;
+}
+
+/* Primary Button */
+.btn-primary {
+    padding: 14px 32px;
+    background-color: #ffffff;
+    color: #f5a661;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    gap: 15px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.divider span {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-social:active {
+    transform: translateY(0);
+}
+
+.btn-social i {
+    font-size: 18px;
+}
+
+.btn-google:hover {
+    border-color: #4285F4;
+    color: #4285F4;
+}
+
+.btn-facebook:hover {
+    border-color: #1877F2;
+    color: #1877F2;
+}
+
+/* Responsive Design: Tablet and Mobile */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-pane {
+        width: 100%;
+        height: 300px;
+        padding: 40px 20px;
+    }
+
+    .right-pane {
+        width: 100%;
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .form-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-pane {
+        height: 250px;
+        padding: 30px 15px;
+    }
+
+    .right-pane {
+        padding: 30px 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-footer {
+        padding-top: 15px;
+    }
+
+    .hours,
+    .address {
+        font-size: 12px;
+    }
+
+    .form-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .signup-form {
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .form-input {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .btn-social {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .btn-social i {
+        font-size: 16px;
+    }
+
+    .divider {
+        margin: 20px 0;
+    }
+
+    .divider span {
+        font-size: 12px;
+    }
+}

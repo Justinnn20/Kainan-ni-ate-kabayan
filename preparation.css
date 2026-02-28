@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #FFF6E8; /* Cream Background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #FFAD4D;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.btn-status-header {
+    background-color: #00C853;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* --- MAIN CONTENT (Preparing) --- */
+.preparing-container {
+    flex: 1;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.kusina-circle {
+    width: 300px;
+    height: 300px;
+    background-color: #FFBD59;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.kusina-circle img {
+    width: 180px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #F59B25;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.subtext {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.btn-track {
+    background-color: white;
+    color: #F59B25;
+    border: 3px solid #F59B25;
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-track:hover {
+    background-color: #F59B25;
+    color: white;
+}
+
+.est-time {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #F59B25;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #FFAD4D;
+    color: white;
+    padding: 40px 50px 10px;
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.brand-col {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 80px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    align-self: flex-start;
+}
+
+.contact-details p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.socials li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copyright {
+    text-align: right;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .kusina-circle {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 30px;
+    }
+
+    .kusina-circle img {
+        width: 130px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtext {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .btn-track {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}

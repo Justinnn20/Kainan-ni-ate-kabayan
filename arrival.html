@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - Kainan ni Ate Kabayan</title>
+    
+    <link rel="stylesheet" href="arrival.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Patrick+Hand&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo ate kabayan.jpg" alt="Logo" class="logo-img"> 
+            <span class="logo-text">KAINAN NI ATE KABAYAN</span>
+        </div>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge">0</span>
+            </div>
+            <button class="btn-status-header active">TRACKING</button>
+        </div>
+    </header>
+
+    <main class="tracking-main">
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="tracking-panel">
+            
+            <div class="panel-handle"></div>
+
+            <div class="status-header">
+                <div>
+                    <h2>On the way</h2>
+                    <p class="arrival-time">Arriving in 10-15 mins</p>
+                </div>
+                <div class="status-badge">OTW</div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="rider-info">
+                <div class="rider-img-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4825/4825038.png" alt="Rider Profile">
+                </div>
+                <div class="rider-details">
+                    <h3>Kuya Rider</h3>
+                    <p>Yamaha NMAX • ABC 1234</p>
+                    <div class="rider-rating">
+                        <i class="fa-solid fa-star"></i> 4.9
+                    </div>
+                </div>
+                <div class="rider-actions">
+                    <button class="btn-circle call"><i class="fa-solid fa-phone"></i></button>
+                </div>
+            </div>
+
+            <div class="message-section">
+                <div class="chat-box" id="chat-display">
+                    <div class="msg rider-msg">
+                        <p>Hello po! Papunta na po ako.</p>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" placeholder="Message your rider...">
+                    <button class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <button class="btn-order-received" onclick="window.location.href='delivered.html'">
+                    ORDER RECEIVED
+                </button>
+                <p class="note">Click this when you receive your food</p>
+            </div>x
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <div class="contact-details">
+                    <p>KAINAN NI ATE KABAYAN</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2022 Kainan ni Ate Kabayan. All Right Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

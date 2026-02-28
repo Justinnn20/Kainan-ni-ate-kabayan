@@ -1,0 +1,512 @@
+:root {
+    --primary-orange: #FFBD59; /* Kulay sa screenshot */
+    --secondary-yellow: #FFD700;
+    --bg-color: #F9F9F9;
+    --white: #fff;
+    --text-dark: #333;
+    --text-light: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   HEADER & NAVIGATION (MATCHING HOMEPAGE)
+   ========================================= */
+header {
+    background-color: #FFBD59;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Area - Ginaya sa Homepage CSS */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+}
+
+/* Ito ang style para sa bilog na logo image */
+.logo-img {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    background-color: var(--white);
+    border: 2px solid var(--white); 
+}
+
+/* Kung may natirang .logo-circle sa ibang page, i-hide o tanggalin na lang sa HTML */
+.logo-circle {
+    display: none; 
+}
+
+.logo h2 {
+    font-family: 'Fredoka One', cursive; /* Siguraduhing naka-link ang font na ito */
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    color: var(--white);
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 5px;
+    transition: border-bottom 0.2s;
+    border-bottom: 3px solid transparent; 
+}
+
+nav a:hover, nav a.active {
+    border-bottom: 3px solid var(--white);
+}
+
+/* Header Right Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon-btn {
+    position: relative;
+    background: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-orange);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-icon-btn:hover {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4757;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+/* Header Order Now Button */
+.btn-order-now {
+    background: #ff4757; 
+    color: var(--white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 0 #d63031;
+    transition: transform 0.1s;
+}
+
+.btn-order-now:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d63031;
+}
+
+/* ============================
+   2. MAIN CONTENT LAYOUT
+   ============================ */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px 20px;
+}
+
+/* ============================
+   3. SEARCH & RATINGS BAR
+   ============================ */
+.top-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 2px solid #FCD695; /* Light orange border */
+    gap: 15px;
+}
+
+.search-container i {
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.search-container input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+.rating-badge {
+    background: var(--primary-orange);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(245, 166, 35, 0.3);
+}
+
+.rating-badge .stars {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.rating-badge span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ============================
+   4. CATEGORIES (Square Style)
+   ============================ */
+.categories-section {
+    margin-bottom: 40px;
+}
+
+.category-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    /* Hide Scrollbar styling */
+    scrollbar-width: none; 
+}
+.category-wrapper::-webkit-scrollbar { display: none; }
+
+.category-card {
+    min-width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #aaa;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+.category-card.active {
+    background: var(--primary-orange);
+    color: white;
+    border-color: var(--primary-orange);
+    box-shadow: 0 8px 20px rgba(245, 166, 35, 0.4);
+}
+
+.cat-icon {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.cat-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cat-count {
+    font-size: 0.6rem;
+    margin-top: 2px;
+    opacity: 0.7;
+}
+
+/* ============================
+   5. MENU GRID (Full Width)
+   ============================ */
+.menu-grid {
+    display: grid;
+    /* Responsive Columns */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #FCD695;
+}
+
+/* CONTAINER NG IMAGE: Ginawa nating bilog at ginitna */
+.card-img-container {
+    width: 180px;       /* 1. Dapat fixed size at pareho sa height */
+    height: 180px;      /* 2. Pareho dapat sa width para perfect circle */
+    border-radius: 50%; /* 3. Ito ang magic code para maging bilog */
+    
+    margin: 20px auto;  /* 4. 'auto' ang magpapagitna sa kanya horizontal */
+    overflow: hidden;   /* 5. Para ma-crop yung image sa loob ng bilog */
+    
+    /* Optional: Designs para mas maganda tignan */
+    border: 5px solid #fff5eb; /* Light orange border o white */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Shadow para umangat tignan */
+    background-color: #f4f4f4;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* IMAGE MISMO */
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguradong puno ang bilog, hindi banat ang picture */
+    transition: transform 0.5s ease;
+}
+
+/* HOVER EFFECT (Zoom pa rin) */
+.menu-card:hover .card-img-container img {
+    transform: scale(1.1);
+}
+.card-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.card-header h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    line-height: 1.2;
+    max-width: 70%;
+}
+
+.price {
+    color: var(--primary-orange);
+    font-weight: 800;
+    font-size: 1.1rem;
+    background: #FFF8E1;
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+.desc {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.stars {
+    color: var(--secondary-yellow);
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+/* Card Buttons */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.btn-add-cart {
+    flex: 1;
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    box-shadow: 0 4px 0 #d48806;
+}
+
+.btn-add-cart:hover {
+    background: #e69512;
+}
+
+.btn-add-cart:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d48806;
+}
+
+.btn-fav {
+    width: 45px;
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.btn-fav:hover {
+    border-color: #ff4757;
+    color: #ff4757;
+    background: #fff0f1;
+}
+
+/* --- NEW CODE: Para sa Functional Heart Animation --- */
+
+/* Smooth transition para sa icon */
+.btn-fav i {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* Kapag "active" (ni-like na): */
+.btn-fav.active {
+    border-color: #ff4757;  /* Red Border */
+    background: #fff0f1;    /* Light Red Background */
+}
+
+.btn-fav.active i {
+    color: #ff4757;         /* Red Icon */
+    transform: scale(1.3);  /* Zoom effect (Bounce) */
+}
+
+/* ============================
+   6. TOAST NOTIFICATION
+   ============================ */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@-webkit-keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+@keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+/* ============================
+   7. MOBILE RESPONSIVE
+   ============================ */
+@media (max-width: 768px) {
+    .header-container { padding: 0 15px; }
+    nav { display: none; } /* Hide nav links on small screens */
+    
+    .top-bar { flex-direction: column; align-items: stretch; gap: 15px; }
+    .search-container { width: 100%; }
+    .rating-badge { width: 100%; }
+    
+    .menu-grid { grid-template-columns: 1fr; padding-bottom: 80px; }
+    
+    .category-wrapper { padding-bottom: 10px; }
+}

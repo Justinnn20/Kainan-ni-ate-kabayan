@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --dark-blue: #111827;
+    --light-text: #ffffff; 
+    --secondary-text: #cccccc; 
+    --separator-color: rgba(255, 255, 255, 0.1); 
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background: white; 
+}
+
+li, a, button {
+    font-family: "IBM Plex Mono", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:#ffffff;
+    text-decoration: none;
+} 
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 10%;
+    background-color: #3A1414;
+    margin-top: 0;
+}
+
+.logo {
+    cursor: pointer;
+    background-color: #3A1414;
+    margin-right: auto;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: #3A1414;
+}
+
+.nav_links li a {
+    transition: all 0.3 ease 0s;
+    background-color: #3A1414;
+}
+
+.nav_links li a:hover {
+    color:brown;
+}
+
+.nav_links li a.active {
+    color: #e64f4f;
+}
+
+button{
+    margin-left: 30px;
+    padding: 9px 25px;
+    background-color: #ffffff;
+    color: #3A1414;
+    border:none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+}
+
+button:hover {
+    background-color: #B10707;
+    color: #ffffff;
+}
+.appointment-main {
+width: 100%;
+max-width: 1100px;
+margin: 3rem auto 6rem auto;
+padding: 1rem 2rem;
+text-align: center;
+flex: 1; 
+}
+
+.appointment-title {
+font-size: 2.5rem;
+margin-bottom: 2rem;
+border-bottom: 3px solid var(--dark-red);
+padding-bottom: 0.5rem;
+width: fit-content;
+margin-left: auto;
+margin-right: auto;
+font-family: 'IBM Plex Mono', monospace;
+color: var(--dark-red);
+font-weight: 700;
+}
+.appointment-container {
+background-color: var(--light-bg);
+border-radius: 12px;
+padding: 40px;
+display: flex;
+gap: 50px;
+justify-content: center;
+align-items: flex-start; /* Align tops */
+box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+flex-wrap: wrap;
+}
+.calendar-section,
+.appointment-form {
+flex: 1 1 350px; 
+width: 100%;
+}
+        
+.calendar-label {
+display: block;
+font-weight: 800;
+font-size: 14px;
+color: var(--dark-red);
+margin-bottom: 12px;
+text-align: left;
+font-family: 'IBM Plex Mono', monospace;
+text-transform: uppercase;
+}
+#date-picker {
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+.calendar-wrapper {
+background: white;
+border-radius: 8px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+padding: 20px;
+width: 100%;
+max-width: 400px;
+margin: 0 auto;
+}
+.calendar-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+        .calendar-header button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-red);
+            font-size: 18px;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-header button:hover {
+            background-color: rgba(139, 0, 0, 0.1);
+            transform: scale(1.1);
+        }
+
+        #current-month-display {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            color: var(--dark-red);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .calendar {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 4px;
+            font-family: 'IBM Plex Mono', monospace;
+            table-layout: fixed;
+        }
+
+        .calendar th {
+            color: var(--dark-red);
+            font-weight: 700;
+            font-size: 13px;
+            padding-bottom: 10px;
+        }
+
+        .calendar td {
+            height: 36px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .calendar td:not(.empty):hover {
+            background-color: #ffe0e0;
+            color: var(--dark-red);
+        }
+
+        .calendar td.today {
+            border: 2px solid var(--primary-red);
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .calendar td.selected {
+            background-color: var(--primary-red) !important;
+            color: white !important;
+            font-weight: 700;
+            transform: scale(1.1);
+            box-shadow: 0 2px 5px rgba(177, 7, 7, 0.4);
+        }
+
+        .appointment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--dark-red);
+            margin-right: 15px;
+            min-width: 130px;
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
+
+        .appointment-form input[type="text"],
+        .appointment-form input[type="tel"],
+        .appointment-form input[type="email"],
+        .appointment-form select {
+            flex: 1;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 12px;
+            color: #333;
+            outline: none;
+            width: 100%;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .appointment-form input:focus,
+        .appointment-form select:focus {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(177, 7, 7, 0.1);
+        }
+
+        .appointment-form select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+
+        .book-btn {
+            margin-top: 15px;
+            width: 100%;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            background-color: var(--primary-red);
+            border-radius: 6px;
+            padding: 15px 0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(177, 7, 7, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(139, 0, 0, 0.3);
+        }
+
+/* footer */
+
+footer {
+    background-color: var(--dark-blue);
+    color: var(--light-text);
+}
+
+.footer-container {
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; 
+}
+
+.footer-column {
+    flex: 1; 
+    padding: 0 10px;
+}
+
+.footer-column:first-child {
+    max-width: 350px; 
+}
+
+.footer-logo {
+    flex-grow: 0; 
+    max-width: 150px;
+}
+
+.footer-column h3 {
+    color: var(--light-text);
+    font-size: 18px;
+    font-weight: 700; 
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    display: flex; 
+    align-items: flex-start; 
+    color: var(--secondary-text); 
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif; 
+    font-weight: 400;
+}
+
+.contact-list li i {
+    margin-right: 10px;
+    font-size: 14px;
+    flex-shrink: 0; 
+    padding-top: 2px; 
+}
+
+.quick-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links-list li {
+    margin-bottom: 8px;
+}
+
+.quick-links-list li a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: color 0.2s;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.quick-links-list li a:hover {
+    color: var(--light-text);
+}
+
+.footer-logo img {
+    max-width: 200px; 
+    height: auto;
+    display: block;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 20px 80px;
+    font-size: 12px;
+    color: #9ca2ae; 
+    border-top: 1px solid var(--separator-color);
+}
+
+
+@media (max-width: 768px) {
+    /* From home.css */
+    .hero-details-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text-block {
+        max-width: 90%; 
+        flex: none;
+    }
+    .hero-image-block {
+        order: -1; 
+        margin-bottom: 30px;
+    }
+    .hero-main-title {
+        font-size: 1.8em;
+    }
+    .hero-title-container {
+        padding: 10px 25px;
+    }
+    .hero-section {
+        margin-bottom: 60px; 
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+    
+    .footer-column {
+        padding: 20px 0;
+        max-width: 100%;
+        width: 100%;
+        border-bottom: 1px solid var(--separator-color);
+    }
+    
+    .footer-logo {
+        order: -1; 
+        border-bottom: none; 
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3,
+    .footer-column p {
+        text-align: center;
+    }
+    
+    .quick-links-list,
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-list li {
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 80%; 
+    }
+
+    .footer-copyright {
+        padding: 15px 20px;
+    }
+}

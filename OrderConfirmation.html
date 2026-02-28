@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status - Kainan ni Ate Kabayan</title>
+    <link rel="stylesheet" href="Orderconfirmation.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Patrick+Hand&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-circle">
+                <img src="images/logo ate kabayan.jpg" alt="Logo">
+            </div>
+            <h2>KAINAN NI ATE KABAYAN</h2>
+        </div>
+        
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="cart.html" class="cart-icon-btn">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="badge" id="cart-badge">0</span>
+            </a>
+            <button class="btn-order-now">Order Now!</button>
+        </div>
+    </div>
+  </header>
+
+  <main>
+      <div id="status-details-container" class="status-hero">
+          <div class="map-bg"></div> 
+          
+          <div class="status-card">
+              <div class="status-info">
+                  <h1>10-25 mins</h1>
+                  <h3>Order Confirmed, <span id="conf-name-hero">Guest</span>!</h3>
+                  <p>Ate Kabayan is preparing your order!</p>
+                  
+                  <button class="btn-check-status" onclick="window.location.href='preperation.html'">
+                      CHECK ORDER STATUS
+                  </button>
+              </div>
+              <div class="status-icon">
+                  <div class="check-circle">
+                      <i class="fa-solid fa-check"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="details-container">
+          <div class="details-header">Order Details</div>
+          
+          <div class="details-list">
+              <div class="d-row">
+                  <span class="label">Order Number</span>
+                  <span class="value bold" id="conf-order-id">#000000</span>
+              </div>
+              <div class="d-row">
+                  <span class="label">Customer's Name</span>
+                  <span class="value" id="conf-name-details">Guest</span>
+              </div>
+              <div class="d-row">
+                  <span class="label">Delivery Address</span>
+                  <span class="value address" id="conf-address">...</span>
+              </div>
+              
+              <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ccc;">
+
+              <div id="conf-items-list">
+                  </div>
+
+              <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ccc;">
+
+              <div class="d-row">
+                  <span class="label">Delivery Fee</span>
+                  <span class="value" id="conf-shipping">PHP 0.00</span>
+              </div>
+
+              <div class="d-row total-row">
+                  <span class="label bold">Total (incl. fees & tax)</span>
+                  <span class="value green-text" id="conf-total">PHP 0.00</span>
+              </div>
+
+              <div class="d-row last">
+                  <span class="label">Payment Method</span>
+                  <span class="value" id="conf-payment">Cash</span>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <footer id="contact">
+      <div class="footer-content">
+          <div class="footer-section contact-info">
+              <img src="images/logo ate kabayan.jpg" alt="Kainan ni Ate Kabayan Logo" class="footer-logo">
+              <div class="details">
+                  <p><i class="fas fa-clock"></i> OPEN DAILY (10AM - 3AM)</p>
+                  <p><i class="fas fa-phone-alt"></i> (0921) 910 6057</p>
+                  <p><i class="fas fa-map-marker-alt"></i> 1785 Evangelista St., Bangkal, Makati City</p>
+              </div>
+          </div>
+
+          <div class="footer-section sitemap">
+              <h3>SITEMAP</h3>
+              <ul>
+                  <li><a href="homepage.html">Home</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="homepage.html#reservation-section">Reserve a Table</a></li>
+                  <li><a href="About Us.html">About Us</a></li>
+                  <li><a href="Contactus.html">Contact Us</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-section social-media">
+              <h3>SOCIAL MEDIA</h3>
+              <ul>
+                  <li><a href="https://www.facebook.com/kainanniatekabayan"><i class="fab fa-facebook-f"></i> Kainan ni Ate Kabayan</a></li>
+                  <li><a href="https://www.instagram.com/kainanniatekabayan/"><i class="fab fa-instagram"></i> @Kainan ni Ate Kabaya  </a></li>
+                  <li><a href="https://share.google/I9ubNtooj7WKodVWl"><i class="fab fa-google"></i> Kainan ni Ate Kabayan</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="footer-bottom">
+          <p>© 2022 Kainan ni Ate Kabayan. All Right Reserved.</p>
+      </div>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>

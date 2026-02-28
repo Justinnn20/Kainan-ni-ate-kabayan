@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kainan ni Ate Kabayan - My Cart</title>
+    
+    <link rel="stylesheet" href="Cart.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<header>
+    <div class="header-container">
+        <div class="logo">
+             <img src="images/logo ate kabayan.jpg" alt="Logo" class="logo-img">
+            <h2>KAINAN NI ATE KABAYAN</h2>
+        </div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Contactus.html">Contact Us</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="cart.html" class="cart-icon-btn active-cart">
+                <i class="fa-solid fa-shopping-cart"></i>
+                <span class="badge" id="cart-badge">0</span>
+            </a>
+            <a href="menu.html" class="btn-order-now-link">Order Now!</a>
+        </div>
+    </div>
+</header>
+
+    <main>
+        
+        <div class="page-header">
+            <h1>Cart</h1>
+            <p>KAINAN NI ATE KABAYAN - Bangkal, Makati City</p>
+        </div>
+
+        <div class="stepper-container">
+            <div class="stepper">
+                <div class="step completed">
+                    <div class="circle">1</div>
+                    <span>Menu</span>
+                </div>
+                <div class="line active"></div>
+                <div class="step active">
+                    <div class="circle">2</div>
+                    <span>Cart</span>
+                </div>
+                <div class="line"></div>
+                <div class="step">
+                    <div class="circle">3</div>
+                    <span>Checkout</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="serving-container">
+            <div class="serving-card">
+                <div class="serving-icon">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                </div>
+                <div class="serving-info">
+                    <small>Serving time</small>
+                    <h3>Standard (15-30 mins)</h3>
+                    <a href="#">Change</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-list-container" id="cart-items-list">
+            </div>
+
+        <div class="add-more-container">
+            <button class="btn-add-items" id="btn-add-more" onclick="window.location.href='menu.html'">
+                <i class="fa-solid fa-circle-plus"></i> Add more items
+            </button>
+        </div>
+
+        <div class="popular-section">
+            <div class="popular-header">
+                <h3>Popular with your order</h3>
+                <p>Other customers also bought these</p>
+            </div>
+            
+            <div class="popular-grid">
+                
+                <div class="pop-card" onclick="addToCart('Shanghai', 135, 'images/Shanghai.png')">
+                    <img src="images/Shanghai.png" alt="Shanghai" class="pop-img">
+                    <div class="pop-details">
+                        <h4>PHP 135.00</h4>
+                        <p>Shanghai</p>
+                        <button class="btn-mini-add"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="pop-card" onclick="addToCart('Coke Mismo', 30, 'images/Coke Misskona.png')">
+                    <img src="images/Coke Misskona.png" alt="Coke Mismo" class="pop-img">
+                    <div class="pop-details">
+                        <h4>PHP 30.00</h4>
+                        <p>Coke Mismo</p>
+                        <button class="btn-mini-add"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="pop-card" onclick="addToCart('Tokwa\'t Lechon', 120, 'images/Tokwat Lechon.png')">
+                    <img src="images/Tokwat Lechon.png" alt="Tokwa't Lechon" class="pop-img">
+                    <div class="pop-details">
+                        <h4>PHP 120.00</h4>
+                        <p>Tokwa't Lechon</p>
+                        <button class="btn-mini-add"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="pop-card" onclick="addToCart('Lemon Cucumber', 25, 'images/Lemon Cucumber Juice.png')">
+                    <img src="images/Lemon Cucumber Juice.png" alt="Lemon Cucumber" class="pop-img">
+                    <div class="pop-details">
+                        <h4>PHP 25.00</h4>
+                        <p>Lemon Cucumber</p>
+                        <button class="btn-mini-add"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="pop-card" onclick="addToCart('Buttered Chicken', 220, 'images/Buttered Chicken.png')">
+                    <img src="images/Buttered Chicken.png" alt="Buttered Chicken" class="pop-img">
+                    <div class="pop-details">
+                        <h4>PHP 220.00</h4>
+                        <p>Buttered Chicken</p>
+                        <button class="btn-mini-add"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="summary-container">
+            <div class="summary-content">
+                <div class="row subtotal">
+                    <span>Subtotal</span>
+                    <span class="price-text">PHP <span id="subtotal-display">0.00</span></span>
+                </div>
+                
+                <div class="divider-line"></div>
+
+                <div class="row total">
+                    <div class="total-labels">
+                        <h3>Total <span>(incl. fees and tax)</span></h3>
+                        <a href="#">See summary</a>
+                    </div>
+                    <div class="total-values">
+                        <h3>PHP <span id="total-display">0.00</span></h3>
+                    </div>
+                </div>
+
+                <button class="btn-checkout" id="btn-proceed-checkout">
+                    Review payment and address
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="toast">Item added to cart!</div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col brand">
+                <div class="logo-circle large"><i class="fa-solid fa-chef-hat"></i></div>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-clock"></i> OPEN DAILY (10AM - 3AM)</p>
+                    <p><i class="fa-solid fa-phone"></i> (0921) 918 6057</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 1785 Evangelista St. Bangkal, Makati City</p>
+                </div>
+            </div>
+            <div class="footer-col links">
+                <h4>SITEMAP</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="menu.html">Online Order</a></li>
+                    <li><a href="#">Reserve a Table</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social">
+                <h4>SOCIAL MEDIA</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Kainan ni Ate Kabayan</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @kainanniatekabayan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Kainan ni Ate Kabayan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
