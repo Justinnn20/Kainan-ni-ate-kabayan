@@ -3,8 +3,8 @@ include "db_conn.php";
 
 if (isset($_POST['full_name'])) {
     // Kunin ang data mula sa HTML 'name' attributes
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $contact = mysqli_real_escape_string($conn, $_POST['contact_number']);
+    $name = mysqli_real_escape_string($conn, $_POST['full_name']);
+    $contact = mysqli_real_escape_string($conn, $_POST['contact']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = $_POST['password'];
     $cpass = $_POST['confirm_password'];
@@ -19,7 +19,7 @@ if (isset($_POST['full_name'])) {
     $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 
     // 3. I-save sa database (Siguraduhin na 'Create_Account' ang table name mo)
-    $sql = "INSERT INTO Create_Account (full_name, contact_number, email, password) 
+    $sql = "INSERT INTO Create_Account (name, contact_number, email, password) 
             VALUES ('$name', '$contact', '$email', '$hashed_pass')";
 
     if (mysqli_query($conn, $sql)) {
