@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* LEFT SIDE */
+.left-panel {
+    flex: 0.45;
+    background-color: #f3a65f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    z-index: 2;
+}
+
+.logo { width: 60px; }
+
+.brand-text {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.9;
+    color: #333;
+    text-shadow: 2px 2px white;
+}
+
+.bowl-icon { font-size: 3rem; vertical-align: middle; }
+
+.social-icons-bottom {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+/* RIGHT SIDE (With Curve) */
+.right-panel {
+    flex: 0.55;
+    background: url('restaurant-bg.jpg') center/cover no-repeat;
+    position: relative;
+    /* Eto yung magic para sa curve divider */
+    clip-path: ellipse(100% 115% at 100% 50%);
+    margin-left: -150px; 
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4); /* Dark transparency */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px; /* Offset para sa clip-path */
+}
+
+.login-form-box {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+}
+
+.login-icon {
+    background: #f3a65f;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+}
+
+.welcome-text { font-size: 11px; margin: 10px 0 25px; opacity: 0.9; }
+
+/* INPUT STYLES */
+.input-field {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.input-field i { color: #888; }
+.input-field input {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+.forgot-link { color: white; text-decoration: none; }
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: #f3a65f;
+    color: #333;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* SOCIAL BUTTONS */
+.signup-divider {
+    margin: 25px 0;
+    font-size: 11px;
+    position: relative;
+}
+.signup-divider::before, .signup-divider::after {
+    content: ""; position: absolute; top: 50%; width: 25%; height: 1px; background: rgba(255,255,255,0.5);
+}
+.signup-divider::before { left: 0; } .signup-divider::after { right: 0; }
+
+.social-login { display: flex; gap: 15px; }
+.btn-alt {
+    flex: 1;
+    padding: 10px;
+    border: 1.5px solid white;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .login-container { flex-direction: column; overflow-y: auto; }
+    .right-panel { clip-path: none; margin-left: 0; flex: 1; }
+    .overlay { padding-left: 0; padding: 40px 20px; }
+    .left-panel { flex: none; height: auto; padding: 40px 20px; }
+    .brand-text { font-size: 3rem; }
+}
