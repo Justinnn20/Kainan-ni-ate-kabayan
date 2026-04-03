@@ -6,6 +6,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+    --primary-orange: #F79D43;
+    --header-yellow: #FFBD59;
+    --white: #ffffff;
+    --text-dark: #333;
+}
+
 body {
     background-color: #f4f4f4;
     display: flex;
@@ -15,10 +22,10 @@ body {
 
 
 /* =========================================
-   HEADER & NAVIGATION (UPDATED PARA MAGING KATULAD SA MENU)
+   HEADER & NAVIGATION
    ========================================= */
 header {
-    background-color: #FFBD59;
+    background-color: var(--header-yellow);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -35,7 +42,6 @@ header {
     align-items: center;
 }
 
-/* --- LOGO AREA (UPDATED) --- */
 .logo {
     display: flex;
     align-items: center;
@@ -43,9 +49,8 @@ header {
     color: var(--white);
 }
 
-/* Ito ang style galing sa Menu Page (45px size) */
 .logo-circle {
-    width: 45px;  /* Dati 50px sa homepage, ngayon 45px na para pantay */
+    width: 45px; 
     height: 45px;
     background: white;
     border-radius: 50%;
@@ -63,11 +68,8 @@ header {
     border-radius: 50%;
 }
 
-/* Tinanggal ko na ang lumang .logo-img style ng homepage para di mag-conflict */
-
-/* Update mo ito sa style.css */
 .logo h2 {
-    font-family: 'Fredoka One', cursive; /* Siguraduhing naka-link ang font na ito */
+    font-family: 'Fredoka One', cursive;
     font-size: 1.2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -78,7 +80,6 @@ header {
     line-height: 1; 
 }
 
-/* --- NAVIGATION LINKS --- */
 nav {
     display: flex;
     gap: 30px;
@@ -101,7 +102,6 @@ nav a.active {
     border-bottom: 3px solid var(--white);
 }
 
-/* --- HEADER RIGHT ACTIONS --- */
 .header-actions {
     display: flex;
     align-items: center;
@@ -122,10 +122,6 @@ nav a.active {
     text-decoration: none;
     transition: transform 0.2s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.cart-icon-btn:hover {
-    transform: scale(1.05);
 }
 
 .badge {
@@ -155,16 +151,13 @@ nav a.active {
     transition: transform 0.1s;
 }
 
-.btn-order-now:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 #d63031;
-}
 
-
-/* MAIN CONTENT */
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
 main {
     flex: 1;
-    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Sample Resto BG */
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -174,128 +167,263 @@ main {
     position: relative;
 }
 
-/* Overlay para mabasa ang text */
 main::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.7); /* Faded effect */
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .glass-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 3px solid #3b82f6; /* Blue border as seen in selection */
+    border: 3px solid #3b82f6; 
 }
 
-.card-header h2 {
-    color: #F79D43;
-    font-weight: 800;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
 
-.user-interaction {
+/* --- RATINGS HEADER --- */
+.card-header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-.stars-input {
-    color: #ccc;
-    font-size: 2rem;
-    cursor: pointer;
+.card-header-flex h2 {
+    color: var(--primary-orange);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-.stars-input .fa-star:hover,
-.stars-input .fa-star.active {
-    color: #ffc107; /* Gold star */
-    font-weight: 900; /* Solid star */
-}
+.gold { color: var(--primary-orange); }
 
-.btn-review {
-    background-color: #F4A261;
+.btn-review-main {
+    background-color: var(--primary-orange);
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
+    padding: 12px 25px;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(247, 157, 67, 0.3);
 }
 
-.btn-review:hover {
+.btn-review-main:hover {
     background-color: #e76f51;
 }
 
-/* RATINGS DISPLAY */
-.ratings-display {
+
+/* --- RATINGS DISPLAY (STATS) --- */
+.ratings-layout {
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
 }
 
-.rating-score {
+.score-container {
     text-align: center;
 }
 
-#averageScore {
-    font-size: 6rem;
+#bigScore {
+    font-size: 6.5rem;
     font-weight: 900;
     line-height: 1;
     color: #000;
 }
 
-.total-reviews {
+.count-text {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 5px;
+    font-weight: 600;
 }
 
-.rating-breakdown {
+.bars-container {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.row {
+.bar-row {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.row span {
-    width: 20px;
-    font-weight: bold;
-    color: #F79D43;
+.bar-row span {
+    width: 25px;
+    font-weight: 800;
+    color: var(--primary-orange);
 }
 
-.bar-container {
+.bar-bg {
     flex: 1;
-    height: 15px;
-    background-color: #e0e0e0;
+    height: 18px;
+    background-color: #eee;
     border-radius: 10px;
-    margin-left: 10px;
+    margin-left: 15px;
     overflow: hidden;
 }
 
 .bar-fill {
     height: 100%;
-    background-color: #F79D43;
+    background-color: var(--primary-orange);
     border-radius: 10px;
     transition: width 1s ease-in-out;
 }
 
-/* FOOTER */
+
+/* --- REVIEWS FEED --- */
+.reviews-feed {
+    margin-top: 30px;
+    border-top: 2px solid #eee;
+    padding-top: 30px;
+}
+
+.reviews-feed h3 {
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #444;
+}
+
+.feed-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stars-mini { color: #ffc107; font-size: 0.9rem; }
+
+.review-img-box {
+    margin: 15px 0;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.review-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================
+   MODAL STYLES
+   ========================================= */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    text-align: center;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.star-rating-radio {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.star-rating-radio input { display: none; }
+.star-rating-radio label { color: #ddd; cursor: pointer; transition: 0.2s; }
+.star-rating-radio input:checked ~ label,
+.star-rating-radio label:hover,
+.star-rating-radio label:hover ~ label { color: #ffc107; }
+
+.modal-box textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.image-upload-section {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+}
+
+.image-upload-section label {
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+}
+
+.btn-submit-form {
+    background: var(--primary-orange);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
-    background-color: #F79D43;
+    background-color: var(--primary-orange);
     color: white;
     padding: 40px 50px;
     display: flex;
@@ -304,51 +432,17 @@ footer {
     gap: 20px;
 }
 
-.footer-left {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
+.footer-left { display: flex; gap: 20px; align-items: center; }
+.footer-logo { width: 80px; height: 80px; border-radius: 50%; background: white; }
+.footer-info p, .footer-socials p { font-size: 0.9rem; margin-bottom: 8px; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { color: white; text-decoration: none; font-size: 0.9rem; }
 
-.footer-logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: white;
-}
 
-.footer-info p, .footer-socials p {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    header, footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    .ratings-display {
-        flex-direction: column;
-        align-items: center;
-    }
-    .header-actions {
-        margin-top: 10px;
-    }
-    .footer-left {
-        flex-direction: column;
-    }
+    .ratings-layout { flex-direction: column; gap: 20px; }
+    #bigScore { font-size: 5rem; }
+    .glass-card { padding: 20px; }
+    header, footer { flex-direction: column; text-align: center; }
 }
