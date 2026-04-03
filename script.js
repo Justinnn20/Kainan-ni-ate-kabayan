@@ -125,13 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // PART 7: FEEDBACK / STAR RATING (Inayos para sa Visuals)
+    // PART 7: FEEDBACK / STAR RATING (Inayos para sa Modal)
     // ==========================================
     const stars = document.querySelectorAll('.stars i, .stars-input i');
     const submitBtn = document.querySelector('.btn-submit');
     const feedbackText = document.querySelector('textarea');
     let currentRating = 0; 
 
+    // Logic para sa kulay ng stars habang nag-re-rate
     if (stars.length > 0) {
         stars.forEach((star, clickedIndex) => {
             star.addEventListener('click', () => {
@@ -150,25 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (submitBtn) {
-        submitBtn.addEventListener('click', () => {
-            if (currentRating === 0 && (!feedbackText || feedbackText.value.trim() === "")) {
-                alert("Paki-rate naman po kami o mag-iwan ng feedback. Salamat!");
-            } else {
-                let message = feedbackText ? feedbackText.value : "";
-                alert(`Maraming Salamat Kabayan! \nRating: ${currentRating} Stars\nMessage: ${message}`);
-                if(feedbackText) feedbackText.value = "";
-                currentRating = 0;
-                stars.forEach(s => {
-                    s.classList.remove('fa-solid', 'active');
-                    s.classList.add('fa-regular');
-                });
-            }
-        });
-    }
-
     // ==========================================
-    // PART 8 & 9: CHECKOUT PAGE LOGIC & INTERACTIONS (Inayos para sa Form Submission)
+    // PART 8 & 9: CHECKOUT PAGE LOGIC & INTERACTIONS
     // ==========================================
     const checkoutContainer = document.getElementById('order-items-container');
     if (checkoutContainer) {
@@ -218,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const placeOrderBtn = document.getElementById('placeOrderBtn');
     if (placeOrderBtn) {
         placeOrderBtn.addEventListener('click', function(e) {
-            // Hindi muna natin i-prevent default para mag-submit yung form sa PHP
             let cart = JSON.parse(localStorage.getItem('myCart')) || [];
             
             if(cart.length === 0) {
@@ -230,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const phone = document.getElementById('phone').value;
 
             if(!fname || !lname || !phone) {
-                // Hahayaan nating HTML validation ang gumana rito pero nag-alert na rin tayo
+                // Hahayaan ang HTML5 validation na lumabas
                 return; 
             }
 
@@ -251,9 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const activePayment = document.querySelector('.pay-btn.active');
             if (!activePayment) { e.preventDefault(); alert("Please select a payment method."); return; }
 
-            // Bago mag-redirect ang PHP, linisin na natin ang cart
+            // Bago mag-redirect ang PHP, linisin ang cart sa local storage
             localStorage.removeItem('myCart'); 
-            // Ang redirection ay handle na ng place_order.php
         });
     }
 
@@ -333,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // PART 15: AUTH UI & PAGE CONTROLLER (INDEX VS HOMEPAGE)
+    // PART 15: AUTH UI & PAGE CONTROLLER
     // ==========================================
 
     if (window.location.pathname.includes('homepage.php')) {
@@ -403,7 +385,7 @@ function proceedToCheckout() {
     if(cart.length === 0) {
         alert("Your cart is empty! Please add items first.");
     } else {
-        window.location.href = "checkout.php"; // Inupdate into .php
+        window.location.href = "checkout.php"; 
     }
 }
 
@@ -481,7 +463,7 @@ function updateBadgeCount() {
     let cart = JSON.parse(localStorage.getItem('myCart')) || [];
     let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     const badge = document.getElementById('cart-badge');
-    const checkBadge = document.getElementById('checkout-cart-badge'); // Para sa checkout page
+    const checkBadge = document.getElementById('checkout-cart-badge'); 
     if(badge) badge.innerText = totalQty;
     if(checkBadge) checkBadge.innerText = totalQty;
 }
@@ -498,7 +480,7 @@ function recalculateCheckout() {
     const shippingEl = document.getElementById('checkout-shipping');
     const totalEl = document.getElementById('checkout-total');
     const subtotalEl = document.getElementById('checkout-subtotal');
-    const hiddenTotalEl = document.getElementById('final-total-hidden'); // HIDDEN INPUT para sa PHP
+    const hiddenTotalEl = document.getElementById('final-total-hidden'); 
     const placeOrderBtn = document.getElementById('placeOrderBtn');
     
     let cart = JSON.parse(localStorage.getItem('myCart')) || [];
@@ -506,7 +488,7 @@ function recalculateCheckout() {
     
     const activeDeliveryBtn = document.querySelector('.opt-btn.active');
     const isDelivery = activeDeliveryBtn ? activeDeliveryBtn.innerText.includes('Delivery') : true;
-    const shippingFee = isDelivery ? 45.00 : 0.00; // Inupdate base sa HTML mo na 45.00
+    const shippingFee = isDelivery ? 45.00 : 0.00; 
     
     let grandTotal = subtotal + shippingFee;
 
@@ -514,7 +496,7 @@ function recalculateCheckout() {
     if(shippingEl) shippingEl.innerText = 'PHP ' + shippingFee.toFixed(2);
     if(totalEl) totalEl.innerText = 'PHP ' + grandTotal.toFixed(2);
     
-    // ITO ANG IMPORTANTE: I-update ang hidden input value
+    // In-update ang hidden input value para sa PHP database
     if(hiddenTotalEl) hiddenTotalEl.value = grandTotal;
 
     if (cart.length === 0 && placeOrderBtn) {
@@ -627,4 +609,15 @@ function loadFavoritesState() {
             if (nameTag) updateHeartVisuals(btn, checkFavoriteStatus(nameTag.innerText.trim()));
         }
     });
+}
+
+// MGA FUNCTIONS PARA SA RATINGS MODAL
+function openReviewModal() {
+    const modal = document.getElementById('reviewModal');
+    if(modal) modal.style.display = 'flex';
+}
+
+function closeReviewModal() {
+    const modal = document.getElementById('reviewModal');
+    if(modal) modal.style.display = 'none';
 }
